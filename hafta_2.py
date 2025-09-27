@@ -1,11 +1,7 @@
 import requests
 import os
 
-from dotenv import load_dotenv
-
-load_dotenv()  # .env dosyasını yükler
-
-NOTION_TOKEN = os.getenv("API_TOKEN")  # API key'in
+NOTION_TOKEN = os.environ["NOTION_TOKEN"]  # API key'in
 DATABASE_ID = "27bf37d4-26e2-800d-8971-fb050bc7ed9c"  # Formülün olduğu database ID
 BLOCK_ID = "27bf37d4-26e2-8082-8359-e740c0964af1"     # Güncellenecek text bloğunun ID'si
 FORMULA_PROPERTY = "Formula"  # Formül kolonunun adı
