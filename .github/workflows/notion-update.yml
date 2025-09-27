@@ -1,0 +1,19 @@
+name: Notion updater
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # Her 15 dakikada bir (UTC)
+  workflow_dispatch:          # Elle tetikleme butonu
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt || pip install requests
+      - env:
+          NOTION_TOKEN: ${{ secrets.API_TOKEN }}
+        run: python hafta_2.py
