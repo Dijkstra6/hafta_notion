@@ -2,7 +2,7 @@ name: Notion updater
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # Her 15 dakikada bir (UTC)
+    - cron: "0 21 * * 0"      # Her pazartesi 00:00 (TSİ)
   workflow_dispatch:          # Elle tetikleme butonu
 
 jobs:
