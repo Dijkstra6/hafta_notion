@@ -15,5 +15,5 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt || pip install requests
       - env:
-          NOTION_TOKEN: ${{ secrets.API_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: python hafta_2.py
